@@ -9,9 +9,9 @@ int bin_search(int a[], int n, int v)
 
 	low = 0;
 	high = n - 1;
-	mid = (low + high) / 2;
 
 	while (low <= high) {
+		mid = (low + high) / 2;
 		if (v < a[mid])
 			high = mid - 1;
 		else if (v > a[mid])
@@ -58,7 +58,7 @@ int main(void)
 	printf("\n");
 
 	while (scanf("%d", &k) == 1) {
-		if ((found = bin_search_2(a, ARR_SIZE(a), k)) >= 0)
+		if ((found = bin_search(a, ARR_SIZE(a), k)) >= 0)
 			printf("%d founded at index %d\n", k, found);
 		else
 			printf("%d not founed\n", k);
