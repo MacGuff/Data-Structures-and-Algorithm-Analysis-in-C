@@ -37,6 +37,7 @@ static int bs(int a[], int l, int h, int v)
 		return mid;
 }
 
+/*二分查找的递归实现*/
 int bin_search_2(int a[], int n, int v)
 {
 	return bs(a, 0, n - 1, v);
