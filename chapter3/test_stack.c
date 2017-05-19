@@ -7,8 +7,7 @@ int main()
 {
 	int k;
 	char c;
-	stack *s;
-	init(&s);
+	stack *s = create_stack();
 
 	while (scanf("%1s", &c)) {
 		switch (c) {
@@ -24,7 +23,7 @@ int main()
 			printf("top item is %d\n", peek(s));
 			break;
 		default:
-			printf("unknown word:%c\n", c);
+			printf("unknown command: %c\n", c);
 			break;
 		}
 	}

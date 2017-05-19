@@ -4,7 +4,7 @@
 struct _stack;
 typedef struct _stack stack;
 
-void init(stack **s);
+stack *create_stack();
 int is_empty(stack *s);
 void push(stack *s, int x);
 int pop(stack *s);

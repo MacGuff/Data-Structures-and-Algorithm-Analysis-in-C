@@ -29,8 +29,7 @@ static int is_matched(char left, char right)
 static int is_brackets_balanced(const char *exp)
 {
 	int c;
-	stack *s;
-	init(&s);
+	stack *s = create_stack();
 
 	while (c = *exp++) {
 		//左括号，压栈
