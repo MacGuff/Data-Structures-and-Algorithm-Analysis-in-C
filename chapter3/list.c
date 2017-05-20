@@ -4,14 +4,6 @@
 
 #include "list.h"
 
-/*
-*不含头结点的list
-*/
-struct node {
-	int data;
-	struct node *next;
-};
-
 int is_empty(struct node *list)
 {
 	return list == NULL;
@@ -42,7 +34,7 @@ static struct node *find_pre(struct node *list, struct node *pos)
 }
 
 /*inserts a new node on the front of the list*/
-void push(struct node **list, int x)
+void prepend(struct node **list, int x)
 {
 	struct node *new = (struct node *)malloc(sizeof(struct node));
 
@@ -116,26 +108,4 @@ void print_list(struct node *list)
 		printf("%d ", list->data);
 		list = list->next;
 	}
-}
-
-int main(void)
-{
-	struct node *head = NULL;
-	append(&head, 5);
-	append(&head, 6);
-
-	push(&head, 7);
-	push(&head, 1);
-	append(&head, 4);
-	insert_after(head, head, 8);
-	printf("\nCreated Linked list is: ");
-	print_list(head);
-
-	delete(&head, 6);
-
-	delete(&head, 1);
-	delete(&head, 10);
-	printf("\nDeleted Linked list is: ");
-	print_list(head);
-	return 0;
 }

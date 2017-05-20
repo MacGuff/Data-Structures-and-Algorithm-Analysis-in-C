@@ -3,13 +3,19 @@
 
 #include <stddef.h>
 
-struct node;
+/*
+*不含头结点的list
+*/
+struct node {
+	int data;
+	struct node *next;
+};
 
 int is_empty(struct node *list);
 
 struct node *find(struct node *list, int x);
 /**************insert********************/
-void push(struct node **list, int x);
+void prepend(struct node **list, int x);
 void insert_after(struct node *list, struct node *pos, int x);
 void append(struct node **list, int x);
 /**************delete********************/
